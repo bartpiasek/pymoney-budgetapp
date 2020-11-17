@@ -9,6 +9,14 @@ table.table-hover {
     
 }
 .progressbar {
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 30px;
+}
+.col-6.col-sm-4 {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.global {
+    margin-left: 5%;
+    margin-right: 5%;
 }
