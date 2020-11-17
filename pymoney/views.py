@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import *
 
 
@@ -12,4 +12,5 @@ def project_list(request):
 def project_details(request, project_slug):
     """
     """
-    return render(request, 'pymoney/main_details.html')
+    budget = get_object_or_404(Budget, slug=project_slug)
+    return render(request, 'pymoney/main_details.html', {'budget':budget})

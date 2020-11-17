@@ -15,6 +15,9 @@ class Budget(models.Model):
         self.slug = slugify(self.name)
         super(Budget, self).save(*args, **kwargs)
 
+    def __str__(self):
+            return self.name
+
 
 class Category(models.Model):
     """
@@ -22,6 +25,9 @@ class Category(models.Model):
     """
     Budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+            return self.name
 
 
 class Expense(models.Model):
@@ -33,6 +39,9 @@ class Expense(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    def __str__(self):
+            return self.name
+
 
 class Income(models.Model):
     """
@@ -43,6 +52,9 @@ class Income(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    def __str__(self):
+            return self.name
+
 
 class Saving(models.Model):
     """
@@ -52,3 +64,6 @@ class Saving(models.Model):
     title = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+            return self.name
