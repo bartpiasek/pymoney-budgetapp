@@ -1,10 +1,8 @@
 from django.shortcuts import render
-import cv2 
-import pytesseract
-import numpy as np
+import pyPDF2
 
 def imagetotext():
     """
-    converting upload image to string
+    converting upload pdf to text
     """
-    img = cv2.imread('')
+    pass
